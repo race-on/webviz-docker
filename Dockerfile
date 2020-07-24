@@ -13,7 +13,7 @@ FROM node:10.16-slim AS build
 RUN apt-get update && apt-get install -yq gnupg libgconf-2-4 wget git ssh --no-install-recommends
 
 # Get webviz code
-RUN git clone https://github.com/cruise-automation/webviz.git 
+RUN git clone https://github.com/cruise-automation/webviz.git && cd webviz && git checkout 73445ea
 
 WORKDIR /webviz
 
